@@ -1,0 +1,53 @@
+{% extends 'main.html' %}{% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'styles/drivers.css' %}" />
+<div class="container">
+  <div class="row">
+    <h2>Drivers</h2>
+    <a href="{% url 'new-driver'%}">New Driver<i class="fa-solid fa-plus"></i></a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <td>№</td>
+        <td>first name</td>
+        <td>last name</td>
+        <td>username</td>
+        <td>driver id</td>
+        <td>co-driver</td>
+        <td>vehicle</td>
+        <td>notes</td>
+        <td>app version</td>
+        <td>date joined</td>
+        <td>last login</td>
+        <td>actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% if drivers %} {% for driver in drivers %}
+      <tr>
+        <td>n*</td>
+        <td>{{driver.user.first_name}}</td>
+        <td>{{driver.user.last_name}}</td>
+        <td>{{driver.user.username}}</td>
+        <td>{{driver.company_user_id}}</td>
+        <td>{{driver.co_driver_id}}</td>
+        <td>{{driver.vehicle_id}}</td>
+        <td>{{driver.notes}}</td>
+        <td>{{driver.app_version}}</td>
+        <td>{{driver.user.date_joined}}</td>
+        <td>{{driver.user.last_login}}</td>
+        <td>
+          <a href=""><i class="fa-solid fa-pen"></i></a>
+          <a href=""><i class="fa-solid fa-xmark"></i></a>
+        </td>
+      </tr>
+
+      {% endfor %} {% else %}
+      <tr>
+        <td colspan="12">no records found</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

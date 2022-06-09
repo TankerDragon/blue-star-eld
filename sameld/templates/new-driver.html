@@ -1,0 +1,12 @@
+{% extends 'main.html' %}{% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'styles/new-driver.css' %}" />
+<div class="container">
+  <div class="row">
+    <h2>New Driver</h2>
+    <div class="buttons">
+      <a href="{% url 'drivers'%}">Cancel</a>
+      <button>Save</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

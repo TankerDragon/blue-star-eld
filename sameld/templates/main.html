@@ -1,12 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All units</title>
-    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELD</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -14,13 +14,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
+  </head>
+  <body>
+    <div id="loader"></div>
     <div class="page-container">
       <nav>
         <div class="logo-container">
-          <img src="" alt="logo">
-          <div id="nav-change">
+          <img src="{% static 'images/logo.png' %}" width="150" alt="logo" />
+          <div id="side-change">
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </div>
@@ -30,7 +31,7 @@
       </nav>
       <div id="side-bar">
         <ul>
-          <li class='active'>
+          <li class="active">
             <a href=""><i class="fas fa-user-friends"></i>Drivers</a>
           </li>
           <li>
@@ -41,11 +42,25 @@
           </li>
         </ul>
       </div>
-      <div id="main">
-        <div id="container">
-
-        </div>
-      </div>
+      <div id="main">{% block content %} {% endblock %}</div>
     </div>
-</body>
+    <div style="display: none">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/KMxo3T_MTvY"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <script>
+      loader = document.getElementById("loader");
+      window.addEventListener("load", () => {
+        loader.style.display = "none";
+      });
+    </script>
+    <script src="{% static 'scripts/main.js' %}"></script>
+  </body>
 </html>

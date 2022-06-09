@@ -1,0 +1,42 @@
+.row {
+  padding-bottom: 15px;
+}
+.row a {
+  font-size: 17px;
+  text-decoration: none;
+  color: #4b4b4b;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 5px 10px;
+}
+.row a:hover {
+  background-color: rgb(234, 234, 234);
+}
+.row button {
+  min-width: 80px;
+  background-color: #5cb85c;
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 5px 10px;
+}
+
+.row button:hover {
+  cursor: pointer;
+}
+.row a i {
+  margin-left: 10px;
+}
+table {
+  font-size: small;
+  width: 100%;
+  border-collapse: collapse;
+}
+table td {
+  border: 1px solid rgb(194, 194, 194);
+  padding: 10px;
+}
+table thead td {
+  text-transform: uppercase;
+  font-weight: 600;
+}
