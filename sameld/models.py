@@ -109,15 +109,15 @@ FUEL_TYPE = (
 # Create your models here.
 class Vehicle(models.Model):
     unit_number = models.CharField(max_length=10, unique=True)
-    make = models.CharField(max_length=15, null=True)
-    model = models.CharField(max_length=20, null=True)
+    make = models.CharField(max_length=15, blank=True, null=True)
+    model = models.CharField(max_length=20, blank=True, null=True)
     year = models.CharField(max_length=2, choices=YEARS, default='22')
     license_state = models.CharField(max_length=2, choices=STATES, default='NY')
     license_number = models.CharField(max_length=20, null=True)
-    vin_number = models.CharField(max_length=20, null=True)
+    vin_number = models.CharField(max_length=20, blank=True, null=True)
     fuel_type = models.CharField(max_length=2, choices=FUEL_TYPE, default='di')
-    eld_device = models.CharField(max_length=16, null=True)
-    notes = models.CharField(max_length=255, null=True)
+    eld_device = models.CharField(max_length=16, blank=True, null=True)
+    notes = models.CharField(max_length=255, blank=True, null=True)
     is_active = models.BooleanField(default=1)
 
 

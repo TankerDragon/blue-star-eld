@@ -1,7 +1,7 @@
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Driver
+from .models import Driver, Vehicle
 
 
 
@@ -19,7 +19,7 @@ class DriverForm(ModelForm):
         fields = ['cdl_number', 'cdl_state', 'vehicle', 'company_user_id', 'phone',
                   'co_driver', 'notes']
 
-# class VehicleForm(ModelForm):
-#     class Meta:
-#         model = Vehicle
-#         fields = '__all__'
+class VehicleForm(ModelForm):
+    class Meta:
+        model = Vehicle
+        fields = '__all__'

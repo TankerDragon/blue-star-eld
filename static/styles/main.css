@@ -4,8 +4,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --theme-color: #f3f3f3;
+}
+.dark-theme {
+  --theme-color: rgb(0, 61, 136);
+}
 body {
-  background-color: #f3f3f3;
+  background-color: var(--theme-color);
   color: #4b4b4b;
 }
 a,

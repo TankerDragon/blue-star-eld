@@ -1,0 +1,32 @@
+{% extends 'main.html' %}{% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'styles/new-vehicle.css' %}" />
+<div class="container">
+  <form action="" method="POST">
+    <div class="row">
+      <h2>New Vehicle</h2>
+      <div class="buttons">
+        <a href="{% url 'vehicles'%}">cancel</a>
+        <input type="submit" value="save" />
+      </div>
+    </div>
+    <br />
+    {{vehicle_form.errors}}
+    <br />
+    {% csrf_token %}
+    <div class="line"><label for=""> {{vehicle_form.unit_number.label}} </label>{{vehicle_form.unit_number}}</div>
+    <div class="line"><label for=""> {{vehicle_form.make.label}} </label>{{vehicle_form.make}}</div>
+    <div class="line"><label for=""> {{vehicle_form.model.label}} </label>{{vehicle_form.model}}</div>
+    <div class="line"><label for=""> {{vehicle_form.year.label}} </label>{{vehicle_form.year}}</div>
+    <div class="joined">
+      <div class="line"><label for="">{{vehicle_form.license_state.label}}</label> {{vehicle_form.license_state}}</div>
+      <div class="line"><label for="">{{vehicle_form.license_number.label}}</label> {{vehicle_form.license_number}}</div>
+    </div>
+
+    <div class="line"><label for="">{{vehicle_form.vin_number.label}}</label> {{vehicle_form.vin_number}}</div>
+    <div class="line"><label for="">{{vehicle_form.fuel_type.label}}</label> {{vehicle_form.fuel_type}}</div>
+    <div class="line"><label for="">{{vehicle_form.eld_device.label}}</label> {{vehicle_form.eld_device}}</div>
+    <div class="line"><label for="">{{vehicle_form.notes.label}}</label> {{vehicle_form.notes}}</div>
+  </form>
+</div>
+
+{% endblock %}

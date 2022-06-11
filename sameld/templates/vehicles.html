@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <h2>Vehicles</h2>
-    <a href="{% url 'new-driver'%}">New Vehicle<i class="fa-solid fa-plus"></i></a>
+    <a href="{% url 'new-vehicle'%}">New Vehicle<i class="fa-solid fa-plus"></i></a>
   </div>
   <table>
     <thead>
@@ -11,6 +11,7 @@
         <td>№</td>
         <td>unit number</td>
         <td>driver</td>
+        <td>make</td>
         <td>model</td>
         <td>vin number</td>
         <td>notes</td>
@@ -23,11 +24,12 @@
         <td>n*</td>
         <td>{{vehicle.unit_number}}</td>
         <td>*</td>
+        <td>{{vehicle.make}}</td>
         <td>{{vehicle.model}}</td>
         <td>{{vehicle.vin_number}}</td>
         <td>{{vehicle.notes}}</td>
         <td>
-          <a href="{% url 'edit-driver' vehicle.id %}">
+          <a href="{% url 'edit-vehicle' vehicle.id %}">
             <abbr title="Edit">
               <i class="fa-solid fa-pen"></i>
             </abbr>

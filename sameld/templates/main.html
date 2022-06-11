@@ -32,13 +32,13 @@
       <div id="side-bar">
         <ul>
           <li>
-            <a href="{% url 'drivers' %}" class="active"><i class="fas fa-user-friends"></i>Drivers</a>
+            <a href="{% url 'drivers' %}" {% if category == 'drivers' %}class="active"{% endif %}><i class="fas fa-user-friends"></i>Drivers</a>
           </li>
           <li>
-            <a href="{% url 'vehicles' %}"><i class="fas fa-truck"></i>Vehicles</a>
+            <a href="{% url 'vehicles' %}" {% if category == 'vehicles' %}class="active"{% endif %}><i class="fas fa-truck"></i>Vehicles</a>
           </li>
           <li>
-            <a href=""><i class="fas fa-tablet-alt"></i>Logs</a>
+            <a href="" {% if category == 'logs' %}class="active"{% endif %}><i class="fas fa-tablet-alt"></i>Logs</a>
           </li>
         </ul>
       </div>

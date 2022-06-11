@@ -6,4 +6,6 @@ navController.addEventListener("click", () => {
   sideBar.classList.toggle("hidden");
   navController.classList.toggle("to-right");
   main.classList.toggle("full");
+  //
+  // document.body.classList.toggle('dark-theme');
 });
