@@ -66,17 +66,63 @@ STATES = [
     ("WV", "West Virginia"), 
     ("WY", "Wyoming")
 ]
+YEARS = (
+    ('99', '1999'),
+    ('00', '2000'),
+    ('01', '2001'),
+    ('02', '2002'),
+    ('03', '2003'),
+    ('04', '2004'),
+    ('05', '2005'),
+    ('06', '2006'),
+    ('07', '2007'),
+    ('08', '2008'),
+    ('09', '2009'),
+    ('10', '2010'),
+    ('11', '2011'),
+    ('12', '2012'),
+    ('13', '2013'),
+    ('14', '2014'),
+    ('15', '2015'),
+    ('16', '2016'),
+    ('17', '2017'),
+    ('18', '2018'),
+    ('19', '2019'),
+    ('20', '2020'),
+    ('21', '2021'),
+    ('22', '2022'),
+    ('23', '2023'),
+)
+FUEL_TYPE = (
+    ('di', 'Diesel'),
+    ('ga', 'Gasoline'),
+    ('pr', 'Propane'),
+    ('li', 'Liquid Natural Gas'),
+    ('co', 'Compressed Natural Gas'),
+    ('me', 'Methanol'),
+    ('e', 'E-85'),
+    ('m', 'M-85'),
+    ('a', 'A55'),
+    ('bi', 'Biodisel'),
+    ('o', 'Other'),
+)
 # Create your models here.
 class Vehicle(models.Model):
     unit_number = models.CharField(max_length=10, unique=True)
+    make = models.CharField(max_length=15, null=True)
     model = models.CharField(max_length=20, null=True)
+    year = models.CharField(max_length=2, choices=YEARS, default='22')
+    license_state = models.CharField(max_length=2, choices=STATES, default='NY')
+    license_number = models.CharField(max_length=20, null=True)
     vin_number = models.CharField(max_length=20, null=True)
+    fuel_type = models.CharField(max_length=2, choices=FUEL_TYPE, default='di')
+    eld_device = models.CharField(max_length=16, null=True)
     notes = models.CharField(max_length=255, null=True)
     is_active = models.BooleanField(default=1)
 
 
 class Driver(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     cdl_number = models.CharField(max_length=20, unique=True)
     cdl_state = models.CharField(max_length=2, choices=STATES, default='NY')
     vehicle = models.OneToOneField(Vehicle, blank=True, null=True, on_delete=models.SET_NULL)

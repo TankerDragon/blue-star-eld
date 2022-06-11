@@ -1,12 +1,37 @@
 {% extends 'main.html' %}{% load static %} {% block content %}
 <link rel="stylesheet" href="{% static 'styles/new-driver.css' %}" />
 <div class="container">
-  <div class="row">
-    <h2>New Driver</h2>
-    <div class="buttons">
-      <a href="{% url 'drivers'%}">Cancel</a>
-      <button>Save</button>
+  <form action="" method="POST">
+    <div class="row">
+      <h2>New Driver</h2>
+      <div class="buttons">
+        <a href="{% url 'drivers'%}">cancel</a>
+        <input type="submit" value="save" />
+      </div>
     </div>
-  </div>
+    <br />
+    {{user_form.errors}}
+    <br />
+    {{driver_form.errors}}
+    <br />
+    {% csrf_token %}
+    <div class="line"><label for=""> {{user_form.username.label}} </label>{{user_form.username}}</div>
+    <div class="line"><label for="">{{user_form.email.label}}</label>{{user_form.email}}</div>
+    <div class="line"><label for="">{{user_form.first_name.label}}</label> {{user_form.first_name}}</div>
+    <div class="line"><label for="">{{user_form.last_name.label}}</label> {{user_form.last_name}}</div>
+    <div class="line"><label for="">{{user_form.password1.label}}</label> {{user_form.password1}}</div>
+    <div class="line"><label for="">{{user_form.password2.label}}</label> {{user_form.password2}}</div>
+    <div class="joined">
+      <div class="line"><label for="">{{driver_form.cdl_state.label}}</label> {{driver_form.cdl_state}}</div>
+      <div class="line"><label for="">{{driver_form.cdl_number.label}}</label> {{driver_form.cdl_number}}</div>
+    </div>
+
+    <div class="line"><label for="">{{driver_form.vehicle.label}}</label> {{driver_form.vehicle}}</div>
+    <div class="line"><label for="">{{driver_form.co_driver.label}}</label> {{driver_form.co_driver}}</div>
+    <div class="line"><label for="">{{driver_form.company_user_id.label}}</label> {{driver_form.company_user_id}}</div>
+    <div class="line"><label for="">{{driver_form.phone.label}} </label> {{driver_form.phone}}</div>
+    <div class="line"><label for="">{{driver_form.notes.label}}</label> {{driver_form.notes}}</div>
+  </form>
 </div>
+
 {% endblock %}

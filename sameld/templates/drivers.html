@@ -37,7 +37,7 @@
         <td>{{driver.user.date_joined}}</td>
         <td>{{driver.user.last_login}}</td>
         <td>
-          <a href="">
+          <a href="{% url 'edit-driver' driver.user.id %}">
             <abbr title="Edit">
               <i class="fa-solid fa-pen"></i>
             </abbr>

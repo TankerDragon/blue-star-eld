@@ -31,11 +31,11 @@
       </nav>
       <div id="side-bar">
         <ul>
-          <li class="active">
-            <a href=""><i class="fas fa-user-friends"></i>Drivers</a>
+          <li>
+            <a href="{% url 'drivers' %}" class="active"><i class="fas fa-user-friends"></i>Drivers</a>
           </li>
           <li>
-            <a href=""><i class="fas fa-truck"></i>Vehicles</a>
+            <a href="{% url 'vehicles' %}"><i class="fas fa-truck"></i>Vehicles</a>
           </li>
           <li>
             <a href=""><i class="fas fa-tablet-alt"></i>Logs</a>
@@ -45,6 +45,7 @@
       <div id="main">{% block content %} {% endblock %}</div>
     </div>
     <div style="display: none">
+      {% comment %}
       <iframe
         width="560"
         height="315"
@@ -54,6 +55,7 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
+      {% endcomment %}
     </div>
     <script>
       loader = document.getElementById("loader");

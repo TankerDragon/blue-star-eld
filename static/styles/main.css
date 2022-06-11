@@ -18,7 +18,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 2;
 }
 nav .logo-container {
   padding: 10px;
@@ -29,7 +29,7 @@ nav .logo-container {
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 nav .logo-container #side-change {
   display: flex;
@@ -87,17 +87,18 @@ nav .log-out:hover a {
   border-bottom: 1px solid rgb(180, 180, 180);
 }
 #side-bar ul li {
-  padding: 10px 15px 10px 15px;
   list-style-type: none;
 }
-#side-bar ul li:hover {
-  cursor: pointer;
+#side-bar ul li a:hover {
   background-color: #e8e8e8;
 }
-#side-bar ul li.active {
+#side-bar ul li a.active {
   background-color: #e8e8e8;
 }
 #side-bar ul li a {
+  display: block;
+  padding: 10px 15px 10px 15px;
+
   text-decoration: none;
   color: #4b4b4b;
 }
@@ -112,6 +113,7 @@ nav .log-out:hover a {
   overflow-x: hidden;
   height: calc(100vh - 100px);
   transition: 0.8s ease;
+  z-index: 1;
 }
 #main.full {
   margin-left: 0;
