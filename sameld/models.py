@@ -120,6 +120,9 @@ class Vehicle(models.Model):
     notes = models.CharField(max_length=255, blank=True, null=True)
     is_active = models.BooleanField(default=1)
 
+    def __str__(self):
+        return self.unit_number
+
 
 class Driver(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
@@ -132,6 +135,9 @@ class Driver(models.Model):
     app_version = models.CharField(max_length=5, blank=True, null=True)
     notes = models.CharField(max_length=255, blank=True)
     is_active = models.BooleanField(default=1)
+
+    def __str__(self):
+        return self.user.first_name + ' ' + self.user.last_name
 
 
 class Log(models.Model):
