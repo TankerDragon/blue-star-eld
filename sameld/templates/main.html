@@ -38,7 +38,7 @@
             <a href="{% url 'vehicles' %}" {% if category == 'vehicles' %}class="active"{% endif %}><i class="fas fa-truck"></i>Vehicles</a>
           </li>
           <li>
-            <a href="" {% if category == 'logs' %}class="active"{% endif %}><i class="fas fa-tablet-alt"></i>Logs</a>
+            <a href="{% url 'logs' %}" {% if category == 'logs' %}class="active"{% endif %}><i class="fas fa-tablet-alt"></i>Logs</a>
           </li>
         </ul>
       </div>

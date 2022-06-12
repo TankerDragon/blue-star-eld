@@ -11,4 +11,6 @@ urlpatterns = [
     path('vehicles/', views.vehicles, name = 'vehicles'),
     path('new-vehicle/', views.newVehicle, name = 'new-vehicle'),
     path('edit-vehicle/<int:id>', views.edit_vehicle, name='edit-vehicle'),
+    path('logs/', views.logs, name = 'logs'),
+    path('logs/<int:id>', views.log, name = 'log'),
 ]

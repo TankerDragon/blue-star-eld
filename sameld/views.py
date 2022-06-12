@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from requests import request
 from .models import Driver, Vehicle
@@ -103,10 +104,21 @@ def edit_vehicle(request, id):
     }
     return render(request, 'new-vehicle.html', context)
 
+def logs(request):
+    query = Driver.objects.all()
+    context = {
+        'drivers': query,
+        'category': 'logs',
+    }
+    return render(request, 'logs.html', context)
 
-
-
-
+def log(request, id):
+    query = Driver.objects.all()
+    context = {
+        'drivers': query,
+        'category': 'logs',
+    }
+    return HttpResponse('fuck off')
 
 #         new_driver = Driver()
 #         new_driver.user = user

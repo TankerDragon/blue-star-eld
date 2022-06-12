@@ -1,0 +1,61 @@
+{% extends 'main.html' %}{% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'styles/logs.css' %}" />
+<div class="container">
+  <div class="row">
+    <h2>Logs</h2>
+    <a href=""></a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <td>№</td>
+        <td>driver</td>
+        <td>unit no</td>
+        <td>status</td>
+        <td>co-driver</td>
+        <td>last known location</td>
+        <td>violations</td>
+        <td>warnings</td>
+        <td>break</td>
+        <td>drive</td>
+        <td>shift</td>
+        <td>cycle</td>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+      {% if drivers %} {% for driver in drivers %}
+      <tr>
+        <td>n*</td>
+        <td>{{driver.user.first_name}} {{driver.user.last_name}}</td>
+        <td>{{driver.vehicle.unit_number}}</td>
+        <td>*</td>
+        <td>{{driver.co_driver}}</td>
+        <td>*</td>
+        <td>*</td>
+        <td>*</td>
+        <td>**</td>
+        <td>**</td>
+        <td>**</td>
+        <td>**</td>
+        <td style="display: none;">{{driver.id}}</td>
+      </tr>
+
+      {% endfor %} {% else %}
+      <tr>
+        <td colspan="12">no records found</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+  <script>
+    var body = document.getElementById('tbody');
+    var nTD = body.children[0].children.length;
+
+    for(let i = 0; i < body.children.length; i++) {
+      body.children[i].onclick = () => {
+        location.assign('/logs/' + body.children[i].children[nTD-1].innerText)
+      }
+    }
+  </script>
+</div>
+{% endblock %}
