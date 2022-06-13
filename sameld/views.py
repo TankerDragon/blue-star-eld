@@ -113,12 +113,11 @@ def logs(request):
     return render(request, 'logs.html', context)
 
 def log(request, id):
-    query = Driver.objects.all()
+    query = Driver.objects.get(pk = id)
     context = {
-        'drivers': query,
         'category': 'logs',
     }
-    return HttpResponse('fuck off')
+    return render(request, 'log.html', context)
 
 #         new_driver = Driver()
 #         new_driver.user = user
