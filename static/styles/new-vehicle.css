@@ -1,82 +1,81 @@
 .row {
-    padding-bottom: 15px;
-  }
-  .row a {
-    font-size: 17px;
-    text-decoration: none;
-    color: #4b4b4b;
-    border: 1px solid rgb(194, 194, 194);
-    padding: 5px 10px;
-  }
-  .row a:hover {
-    background-color: rgb(234, 234, 234);
-  }
-  .row input {
-    margin-left: 10px;
-    min-width: 80px;
-    background-color: #5cb85c;
-    color: white;
-    font-size: 17px;
-    text-decoration: none;
-    border: 1px solid rgb(194, 194, 194);
-    padding: 5px 10px;
-  }
-  
-  .row input:hover {
-    cursor: pointer;
-  }
-  .row a i {
-    margin-left: 10px;
-  }
-  table {
-    font-size: small;
-    width: 100%;
-    border-collapse: collapse;
-  }
-  table td {
-    border: 1px solid rgb(194, 194, 194);
-    padding: 10px;
-  }
-  table thead td {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  .line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 5px;
-  }
-  .line label {
-    width: 20%;
-  }
-  .line select {
-    width: 20%;
-    border: 1px solid rgb(180, 180, 180);
-  }
-  .line input {
-    width: 80%;
-    padding: 3px;
-    border: 1px solid rgb(180, 180, 180);
-  }
-  .joined {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .joined .line {
-    width: 60%;
-  }
-  .joined .line:first-child {
-    width: 35%;
-  }
-  .joined .line select {
-    width: 35%;
-  }
-  .errorlist {
-    color: red;
-  }
-  .errorlist li {
-    margin-left: 20px;
-  }
-  
+  padding-bottom: 15px;
+}
+.row a {
+  font-size: 17px;
+  text-decoration: none;
+  color: #4b4b4b;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 5px 10px;
+}
+.row a:hover {
+  background-color: rgb(234, 234, 234);
+}
+.row input {
+  margin-left: 10px;
+  min-width: 80px;
+  background-color: #5cb85c;
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 5px 10px;
+}
+
+.row input:hover {
+  cursor: pointer;
+}
+.row a i {
+  margin-left: 10px;
+}
+table {
+  font-size: small;
+  width: 100%;
+  border-collapse: collapse;
+}
+table td {
+  border: 1px solid rgb(194, 194, 194);
+  padding: 10px;
+}
+table thead td {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5px;
+}
+.line label {
+  width: 20%;
+}
+.line select {
+  width: 20%;
+  border: 1px solid rgb(180, 180, 180);
+}
+.line input {
+  width: 80%;
+  padding: 3px;
+  border: 1px solid rgb(180, 180, 180);
+}
+.joined {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.joined .line {
+  width: 60%;
+}
+.joined .line:first-child {
+  width: 35%;
+}
+.joined .line select {
+  width: 35%;
+}
+.errorlist {
+  color: red;
+}
+.errorlist li {
+  margin-left: 20px;
+}

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Custom Google Homepage",
+  "description": "This extension will Fuck off the TiTTi ELD",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://app.tteld.net/*", "https://app.tteld.com/*"],
+      "css": ["main.css"],
+      "js": ["js.js"]
+    }
+  ]
+}

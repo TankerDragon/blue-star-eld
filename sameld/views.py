@@ -115,6 +115,7 @@ def logs(request):
 def log(request, id):
     query = Driver.objects.get(pk = id)
     context = {
+        'driver': query,
         'category': 'logs',
     }
     return render(request, 'log.html', context)

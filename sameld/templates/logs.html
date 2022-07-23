@@ -1,11 +1,10 @@
 {% extends 'main.html' %}{% load static %} {% block content %}
-<link rel="stylesheet" href="{% static 'styles/logs.css' %}" />
 <div class="container">
   <div class="row">
     <h2>Logs</h2>
     <a href=""></a>
   </div>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <td>№</td>
@@ -22,9 +21,9 @@
         <td>cycle</td>
       </tr>
     </thead>
-    <tbody id="tbody">
+    <tbody id="tbody" class="hoverable">
       {% if drivers %} {% for driver in drivers %}
-      <tr>
+      <tr onclick="logRedirect({{driver.id}})">
         <td>n*</td>
         <td>{{driver.user.first_name}} {{driver.user.last_name}}</td>
         <td>{{driver.vehicle.unit_number}}</td>
@@ -37,7 +36,6 @@
         <td>**</td>
         <td>**</td>
         <td>**</td>
-        <td style="display: none;">{{driver.id}}</td>
       </tr>
 
       {% endfor %} {% else %}
@@ -47,15 +45,5 @@
       {% endif %}
     </tbody>
   </table>
-  <script>
-    var body = document.getElementById('tbody');
-    var nTD = body.children[0].children.length;
-
-    for(let i = 0; i < body.children.length; i++) {
-      body.children[i].onclick = () => {
-        location.assign('/logs/' + body.children[i].children[nTD-1].innerText)
-      }
-    }
-  </script>
 </div>
 {% endblock %}

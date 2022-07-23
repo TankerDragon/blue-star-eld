@@ -1,11 +1,10 @@
 {% extends 'main.html' %}{% load static %} {% block content %}
-<link rel="stylesheet" href="{% static 'styles/drivers.css' %}" />
 <div class="container">
   <div class="row">
     <h2>Drivers</h2>
     <a href="{% url 'new-driver'%}">New Driver<i class="fa-solid fa-plus"></i></a>
   </div>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <td>№</td>

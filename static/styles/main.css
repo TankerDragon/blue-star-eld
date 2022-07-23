@@ -5,21 +5,38 @@
   box-sizing: border-box;
 }
 :root {
-  --theme-color: #f3f3f3;
+  --body: #f3f3f3;
+  --body-info: #fefefe;
+  --text: #4b4b4b;
+  --nav: #085dad;
+  --nav-logo: #034481;
+  --nav-active: #e8e8e8;
+  --table-differ: #f5f4f4;
+  --table-hover: #eeeeee;
 }
 .dark-theme {
-  --theme-color: rgb(0, 61, 136);
+  --body: #21252b;
+  --body-info: #282c34;
+  --text: #adc2d0;
+  --nav: #282c34;
+  --nav-logo: #16181c;
+  --nav-active: #343943;
+  --table-differ: #1f2127;
+  --table-hover: #31323b;
 }
 body {
-  background-color: var(--theme-color);
-  color: #4b4b4b;
+  background-color: var(--body);
+  color: var(--text);
+}
+a {
+  color: var(--text);
 }
 a,
 ul li {
   transition: 0.3s ease;
 }
 nav {
-  background-color: #085dad;
+  background-color: var(--nav);
   box-shadow: 0px 0px 10px #0a0a0a;
   display: flex;
   align-items: center;
@@ -29,8 +46,8 @@ nav {
 nav .logo-container {
   padding: 10px;
   width: 250px;
-  background-color: #034481;
-  box-shadow: 0px 0px 10px #02294d;
+  background-color: var(--nav-logo);
+  box-shadow: 0px 0px 10px #000509;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,25 +76,46 @@ nav .logo-container #side-change.to-right {
 nav .logo-container #side-change:hover {
   cursor: pointer;
 }
-nav .log-out {
-  padding: 10px;
-  margin-right: 50px;
+nav .actions {
+  margin-right: 30px;
 }
-nav .log-out:hover {
+nav .actions i {
+  font-size: 25px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.4s ease;
+}
+nav .actions i.fa-moon {
+  color: white;
+  background-color: #043767;
+}
+nav .actions i.fa-moon:hover {
+  background-color: white;
+  color: #043767;
+  cursor: pointer;
+}
+nav .actions i.fa-sun {
+  color: #3f3f3f;
+  background-color: #ededed;
+}
+nav .actions i.fa-sun:hover {
+  background-color: #3f3f3f;
+  color: #ededed;
+  cursor: pointer;
+}
+/* nav .actions:hover {
   cursor: pointer;
   background-color: #1270c7;
-}
-nav .log-out a {
-  color: white;
-  text-decoration: none;
-}
-nav .log-out:hover a {
-  color: rgb(247, 247, 247);
-}
+} */
+
 /******/
 #side-bar {
-  background-color: rgb(250, 250, 250);
-  box-shadow: 0px 0px 10px #5c5c5c;
+  background-color: var(--body-info);
+  box-shadow: 0px 0px 10px #4d4d4d;
   width: 250px;
   height: 100vh;
   position: fixed;
@@ -96,17 +134,16 @@ nav .log-out:hover a {
   list-style-type: none;
 }
 #side-bar ul li a:hover {
-  background-color: #e8e8e8;
+  background-color: var(--nav-active);
 }
 #side-bar ul li a.active {
-  background-color: #e8e8e8;
+  background-color: var(--nav-active);
 }
 #side-bar ul li a {
   display: block;
   padding: 10px 15px 10px 15px;
 
   text-decoration: none;
-  color: #4b4b4b;
 }
 #side-bar ul li a i {
   width: 20px;
@@ -129,8 +166,8 @@ nav .log-out:hover a {
   margin: auto;
   margin-top: 15px;
   margin-bottom: 50px;
-  background-color: rgb(250, 250, 250);
-  box-shadow: 0px 1px 3px #838383;
+  background-color: var(--body-info);
+  box-shadow: 0px 1px 3px #494949;
   padding: 15px;
 }
 .row {
@@ -146,4 +183,68 @@ nav .log-out:hover a {
   width: 100%;
   position: fixed;
   z-index: 10;
+}
+
+/********************/
+
+.row a {
+  font-size: 17px;
+  text-decoration: none;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 5px 10px;
+}
+.row a:hover {
+  background-color: rgb(234, 234, 234);
+}
+.row a i {
+  margin-left: 10px;
+}
+/********************/
+
+.table {
+  font-size: small;
+  width: 100%;
+  border-collapse: collapse;
+}
+.table tr {
+  transition: 0.3s ease;
+}
+.table td {
+  border: 1px solid rgb(194, 194, 194);
+  padding: 10px;
+}
+.table thead td {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.table tbody tr {
+  background-color: var(--body-info);
+}
+.table tbody tr:nth-child(even) {
+  background-color: var(--table-differ);
+}
+.table tbody tr td:last-child {
+  position: relative;
+}
+.table tbody tr td:last-child a:first-child {
+  margin-right: 40px;
+}
+.table tbody tr td:last-child a i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.table tbody tr td:last-child i.fa-pen {
+  font-size: 18px;
+  color: rgb(0, 125, 220);
+}
+.table tbody tr td:last-child i.fa-xmark {
+  font-size: 25px;
+  color: rgb(255, 78, 78);
+}
+
+.table .hoverable tr:hover {
+  transform: translateX(-20px);
+  box-shadow: 0px 0px 2px #494949;
+  cursor: pointer;
 }
